@@ -6,13 +6,12 @@
 }
 
 body {
-  background: linear-gradient(135deg, #020feb, #9b648a);
+  background: linear-gradient(90deg, #015feb, #8b398a);
 }
 
 .card {
-  margin: 90%;
   max-width: 470px;
-  background: linear-gradient(135deg, #045feb, #5b548a);
+  background: linear-gradient(135deg, #048feb, #9b428a);
   color: #fff;
   margin: 100px auto 0;
   border-radius: 20px;
@@ -54,7 +53,7 @@ body {
   width: 16px;
 }
 
-.weather icon {
+.weather-icon {
   width: 170px;
   margin-top: 30px;
 }
@@ -126,4 +125,105 @@ body {
     font-size: 45px;
     margin-top: 100px;
   }
-  }
+}
+#darkmode-toggle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.label {
+  border: none;
+  position: relative;
+  left: -112px;
+  width: 70px;
+  height: 30px;
+  background: #ebebeb;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px -15px rgba(255,255,255,0.4);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  transition: background 0.3s;
+  align-items: center;
+}
+
+.label:after {
+  border: none;
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  transition: left 0.3s, background 0.3s;
+}
+
+#darkmode-checkbox:checked + .label {
+  background: #242424;
+}
+
+#darkmode-checkbox:checked + .label:after {
+  left: 42px;
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+.sun {
+  position: relative;
+  margin-top: 22px;
+  left: -15px;
+  width: 22px;
+}
+
+.moon {
+  position: relative;
+  right: -90px;
+  top: -35px;
+  width: 20px;
+}
+
+
+.dark-mode {
+  background: #3B3D55;
+}
+
+.dark-mode2 {
+  background: #808293;
+}
+
+label svg {
+  position: absolute;
+  width: 20px;
+  z-index: 100;
+}
+
+label svg.sun {
+  left: 89px;
+  fill: #fff;
+  transition: 0.3s;
+  top: -4px;
+}
+
+label svg.moon {
+  left: -8px;
+  fill: #7e7e7e;
+  transition: 0.3s;
+  top: -32px;
+}
+
+#darkmode-checkbox:checked + label svg.sun {
+  fill: #7e7e7e;
+}
+
+#darkmode-checkbox:checked + label svg.moon {
+  fill: #fff;
+}
+
