@@ -43,3 +43,9 @@ async function checkWeather(city) {
 searchBtn.addEventListener("click", ()=>{
   checkWeather(searchBox.value);
 })
+
+// script.js
+document.getElementById('darkmode-checkbox').addEventListener('change', function() {
+    document.querySelector('body').classList.toggle('dark-mode');
+    document.querySelector('.card').classList.toggle('dark-mode2');
+});
